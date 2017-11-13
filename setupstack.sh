@@ -17,12 +17,14 @@ add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable";
+apt-get update;
 apt-get install docker-ce -y;
 
 ## WP-DOCKER
 docker run --name wordpresscontainer -p 8081:80 -d wordpress:latest;
 
 # nginx config
+apt-get update;
 apt-get install nginx -y;
 cp ./ea-script/defaultsites /etc/nginx/sites-available/default;
 systemctl restart nginx;
