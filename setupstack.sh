@@ -1,4 +1,3 @@
-sudo su -;
 # retrieve resources from some remote server
 apt-get install -y git;
 rm -R ea-script;
@@ -32,3 +31,4 @@ cp ./ea-script/defaultsites /etc/nginx/sites-available/default;
 systemctl restart nginx;
 
 echo "Please setup RDS and connect it to WP. Thanks!";
+echo "Site URL: http://url.com/";
