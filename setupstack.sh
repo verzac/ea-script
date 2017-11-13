@@ -1,6 +1,7 @@
 sudo su -;
 # retrieve resources from some remote server
 apt-get install -y git;
+rm -R ea-script;
 git clone https://github.com/verzac/ea-script.git ea-script;
 
 # install docker
@@ -24,6 +25,7 @@ apt-get install docker-ce -y;
 docker run --name wordpresscontainer -p 8081:80 -d wordpress:latest;
 
 # nginx config
+apt-get remove -y nginx;
 apt-get update;
 apt-get install nginx -y;
 cp ./ea-script/defaultsites /etc/nginx/sites-available/default;
