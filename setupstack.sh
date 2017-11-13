@@ -19,12 +19,12 @@ add-apt-repository \
    stable";
 apt-get install docker-ce -y;
 
+## WP-DOCKER
+docker run --name wordpresscontainer -p 8081:80 -d wordpress:latest;
+
 # nginx config
 apt-get install nginx -y;
 cp ./ea-script/defaultsites /etc/nginx/sites-available/default;
-
-
-## DOCKER
-docker run --name wordpresscontainer -p 8081:80 -d wordpress:latest;
+systemctl restart nginx;
 
 echo "Please setup RDS and connect it to WP. Thanks!";
