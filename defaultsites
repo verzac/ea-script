@@ -1,6 +1,8 @@
 server {
 	listen 80;
-	server_name example.com;
+	server_name blog.example.com;
+	access_log /srv/www/www.example.com/logs/access.log;
+    error_log /srv/www/www.example.com/logs/error.log;
 	proxy_set_header Host $host;
 	proxy_set_header X-Real-IP $remote_addr;
 	proxy_set_header X-Forwarded-Proto $scheme;
