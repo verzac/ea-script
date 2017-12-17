@@ -1,4 +1,6 @@
+#!/bin/sh
 # install docker
+set -e;
 apt-get remove -y docker docker-engine docker.io;
 apt-get update;
 apt-get install -y \
@@ -15,15 +17,7 @@ add-apt-repository \
 apt-get update;
 apt-get install docker-ce -y;
 
-## WP-DOCKER
-docker run --name wordpresscontainer -p 8081:80 -d wordpress:latest;
-
 # nginx config
 apt-get remove -y nginx;
 apt-get update;
 apt-get install nginx -y;
-cp ./defaultsites /etc/nginx/sites-available/default;
-systemctl restart nginx;
-
-echo "Please setup RDS and connect it to WP. Thanks!";
-echo "Site URL: http://url.com/";
