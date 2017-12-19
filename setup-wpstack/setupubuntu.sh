@@ -1,6 +1,6 @@
 #!/bin/sh
 # install docker
-set -e;
+set -x;
 apt-get remove -y docker docker-engine docker.io;
 apt-get update;
 apt-get install -y \
