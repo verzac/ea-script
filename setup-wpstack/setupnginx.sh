@@ -7,6 +7,6 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/ngi
 # general dfhelman
 openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
 
-cp ./nginx/defaultsites /etc/nginx/sites-available/default;
-cp ./nginx/self-signed.conf /etc/nginx/snippets/self-signed.conf
+cp ./nginx-files/defaultsites /etc/nginx/sites-available/default;
+cp ./nginx-files/self-signed.conf /etc/nginx/snippets/self-signed.conf
 systemctl restart nginx;
