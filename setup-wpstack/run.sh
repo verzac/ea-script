@@ -5,6 +5,8 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
+cp ../commons/gai.conf /etc/gai.conf;
+
 # chmods
 chmod 744 setupnginx.sh;
 chmod 744 setupubuntu.sh;
